@@ -3,7 +3,7 @@ manifest:
     - name: kallistoteles
       url-base: https://github.com/kallistoteles
   projects:
-    - name: zmk
+    - name: zmk-iris
       remote: kallistoteles
       revision: main
       import: app/west.yml
