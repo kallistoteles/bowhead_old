@@ -1,19 +1,19 @@
 # Copyright (c) 2020 Pete Johanson, Kurtis Lew
 # SPDX-License-Identifier: MIT
 
-if SHIELD_IRIS_LEFT
+if SHIELD_BOWHEAD_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "Iris"
+	default "bowhead"
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
 	default y
 
 endif
 
-if SHIELD_IRIS_LEFT || SHIELD_IRIS_RIGHT
+if SHIELD_BOWHEAD_LEFT || SHIELD_BOWHEAD_RIGHT
 
 config ZMK_SPLIT
 	default y
-	
+
 endif
