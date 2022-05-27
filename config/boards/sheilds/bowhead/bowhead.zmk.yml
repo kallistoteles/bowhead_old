@@ -1,0 +1,12 @@
+file_format: "1"
+id: bowhead
+name: bowhead
+type: shield
+url: 0tr1.com
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+siblings:
+  - bowhead_left
+  - bowhead_right
