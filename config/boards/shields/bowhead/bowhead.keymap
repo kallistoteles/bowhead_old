@@ -27,6 +27,9 @@
               &kp Z     &kp X     &kp C     &kp V     &kp B           &kp N     &kp M     &kp COMMA &kp DOT   &kp MINUS
                                         &sl NUM       &sl MOV         &mt LALT SPACE  &sl SYS
             >;
+        };
+
+        system_layer {
 
 // sys
 // -------------------------------------------------------------     --------------------------------------------------------------
@@ -40,7 +43,9 @@
               &kp LT    &kp PIPE  &none     &none     &none           &none     &kp SEMI  &kp COMMA &kp DOT   &kp BSLH
                                             &sl NUM   &sl MOV         &none     &sl DEF
             >;
+        };
 
+        number_layer {
 // num
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |    1    |    2    |    3    |    4    |    5    |     |    6    |    7    |    8    |    9    |    0    |
@@ -53,7 +58,9 @@
               &none     &none     &none     &none     &none           &none     &kp N1    &kp N2    &kp N3    &kp TILDE
                                             &sl DEF   &sl MOV         &none     &sl SYS
             >;
+        };
 
+        movement_layer {
 // mov
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |         |         |         |         |         |     |  HOME   |  PGDN   |   PGUP  |  END    |    Å    |
