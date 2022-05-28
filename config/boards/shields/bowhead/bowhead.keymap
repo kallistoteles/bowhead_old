@@ -63,14 +63,14 @@
         movement_layer {
 // mov
 // -------------------------------------------------------------     --------------------------------------------------------------
-//           |         |         |         |         |         |     |  HOME   |  PGDN   |   PGUP  |  END    |    Å    |
+//           |   BT 1  |   BT 2  |   BT 3  |   BT 4  |   BT 5  |     |  HOME   |  PGDN   |   PGUP  |  END    |    Å    |
 // |  DEF    |   TAB   |         |         |         |         |     |  LEFT   |  DOWN   |    UP   |  RIGHT  |    Ö    |    Ä     |
-//           |         |         |         |         |         |     |         |  LEFT   |   DOWN  |  RIGHT  |         |
+//           | BT CLR  |         |         |         |         |     |         |  LEFT   |   DOWN  |  RIGHT  |         |
 //                                         |   NUM   |   DEF   |     |         |   SYS   |
             bindings = <
-              &none     &none     &none     &none     &none           &kp HOME  &kp PG_UP &kp PG_DN &kp END   &none
+   &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5   &kp HOME  &kp PG_UP &kp PG_DN &kp END   &none
     &sl DEF   &none     &none     &none     &none     &none           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &none     &none
-              &none     &none     &none     &none     &none           &none     &kp LEFT  &kp DOWN  &kp RIGHT &none
+             &bt BT_CLR &none     &none     &none     &none           &none     &kp LEFT  &kp DOWN  &kp RIGHT &none
                                             &sl NUM   &sl DEF         &none     &sl SYS
             >;
 
