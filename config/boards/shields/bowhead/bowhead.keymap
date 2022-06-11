@@ -39,8 +39,8 @@
 //                                         |   NUM   |  DEF    |     |         |   NAV   |
             bindings = <
               &kp EXCL  &kp DQT   &kp HASH  &kp DLLR  &kp PRCNT       &kp AMPS  &kp QMARK  &kp LPAR  &kp RPAR  &kp EQUAL
-    &sl DEF   &kp GT    &kp AT    &kp SQT   &kp DQT   &kb PLUS        &kb TILDE &kp COLON  &kp LBKT  &kp RBKT  &kp SEMI &kp FSLH
-              &kp LT    &kp PIPE  &KB CARET &kb UNDER &kb MINUS       &none     &kp SEMI   &kp LBRC  &kp RBRC  &kp BSLH
+    &sl DEF   &kp GT    &kp AT    &kp SQT   &kp DQT   &kp PLUS        &kp TILDE &kp COLON  &kp LBKT  &kp RBKT  &kp SEMI &kp FSLH
+              &kp LT    &kp PIPE  &kp CARET &kp UNDER &kp MINUS       &none     &kp SEMI   &kp LBRC  &kp RBRC  &kp BSLH
                                             &sl NUM   &sl DEF         &none     &sl NAV
             >;
         };
@@ -56,7 +56,7 @@
               &kp N1    &kp N2    &kp N3    &kp N4    &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
     &sl DEF   &none     &none     &none     &none     &none           &none     &kp N4    &kp N5    &kp N6    &kp SEMI  &kp SQT
               &none     &none     &none     &none     &none           &none     &kp N1    &kp N2    &kp N3    &kp LBKT
-                                            &sl DEF   &sl SYM         &kb N0    &sl NAV
+                                            &sl DEF   &sl SYM         &kp N0    &sl NAV
             >;
         };
 
@@ -68,8 +68,8 @@
 //           | BT CLR  |         |         |         |         |     |         |  LEFT   |   DOWN  |  RIGHT  |         |
 //                                         |   NUM   |   SYM   |     |         |   DEF   |
             bindings = <
-   &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5   &kp HOME  &kp PG_UP &kp PG_DN &kp END    &kb DEL
-       &sl DEF   &kp TAB    &none     &none     &none     &none         &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kb TAB   &kb BSPC
+   &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5   &kp HOME  &kp PG_UP &kp PG_DN &kp END    &kp DEL
+       &sl DEF   &kp TAB    &none     &none     &none     &none         &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp TAB   &kp BSPC
              &bt BT_CLR &none     &none     &none     &none           &none     &kp LEFT  &kp DOWN  &kp RIGHT  &none
                                             &sl NUM   &sl SYM         &none     &sl DEF
             >;
