@@ -5,9 +5,9 @@
 
 /* Layers */
 #define DEF 0
-#define SYS 1
+#define SYM 1
 #define NUM 2
-#define MOV 3
+#define NAV 3
 
 / {
     keymap {
@@ -17,61 +17,61 @@
 
 // default
 // -------------------------------------------------------------     --------------------------------------------------------------
-//           |    Q    |    W    |    F    |    P    |    B    |     |    J    |    L    |    U    |    Y    |    ;    |
-// |SHIFT/ESC|    A    |    R    |    S    |    T    |    G    |     |    M    |    N    |    E    |    I    |    O    |RGUI/RETTURN |
-//           | CTRL/X  |    C    |    D    |    V    |    Z    |     |    K    |    H    |    ,    |    .    |    /    |
-//                                         |   NUM   |   MOV   |     |ALT/SPACE|   SYS   |
+//           |    Q    |    W    |    F    |    P    |    B    |     |    J    |    L    |    U    |    Y    |    '    |
+// |SHIFT/ESC|    A    |    R    |    S    |    T    |    G    |     |    M    |    N    |    E    |    I    |    O    | RETTURN |
+//           | CTRL/X  |    C    |    D    |    V    |    Z    |     |    K    |    H    |    ,    |    .    |  ALT//  |
+//                                         |   NUM   |   SYM   |     |RGUI/SPACE|  NAV   |
             bindings = <
-              &kp Q     &kp W     &kp F     &kp P     &kp B           &kp J     &kp L     &kp U     &kp Y     &kp SEMI
-&mt LSHIFT ESC &kp A    &kp R     &kp S     &kp T     &kp G           &kp M     &kp N     &kp E     &kp I     &kp O   &mt RGUI RET
-        &mt LCTRL X     &kp C     &kp D     &kp V     &kp Z           &kp K     &kp H     &kp COMMA &kp DOT   &kp FSLH
-                                        &sl NUM       &sl MOV         &mt LALT SPACE  &sl SYS
+              &kp Q     &kp W     &kp F     &kp P     &kp B           &kp J     &kp L     &kp U     &kp Y     &kp SQT
+&mt LSHIFT ESC &kp A    &kp R     &kp S     &kp T     &kp G           &kp M     &kp N     &kp E     &kp I     &kp O   &kp RET
+        &mt LCTRL X     &kp C     &kp D     &kp V     &kp Z           &kp K     &kp H     &kp COMMA &kp DOT   &mt LALT FSLH
+                                        &sl NUM       &sl SYM         &mt RGUI SPACE  &sl NAV
             >;
         };
 
-        system_layer {
+        symbol_layer {
 
-// sys
+// sym
 // -------------------------------------------------------------     --------------------------------------------------------------
-//           |    !    |    "    |    #    |    $    |    %    |     |    &    |    -    |    (    |    )    |    =    |
-// |  DEF    |    >    |    @    |    ^    |    ?    |         |     |         |   DEL   |    [    |    ]    |    *    |   BSPC   |
-//           |    <    |    |    |         |         |         |     |         |    ;    |    {    |    }    |    \    |
-//                                         |   NUM   |  MOV    |     |         |   DEF   |
+//           |    !    |    "    |    #    |    $    |    %    |     |    &    |    ?    |    (    |    )    |    =    |
+// |  DEF    |    >    |    @    |    '    |    "    |    +    |     |    ~    |    :    |    [    |    ]    |    *    |   /   |
+//           |    <    |    |    |    ^    |    _    |    -    |     |         |    ;    |    {    |    }    |    \    |
+//                                         |   NUM   |  DEF    |     |         |   NAV   |
             bindings = <
-              &kp EXCL  &kp DQT   &kp HASH  &kp DLLR  &kp PRCNT       &kp AMPS  &kp MINUS  &kp LPAR  &kp RPAR  &kp EQUAL
-    &sl DEF   &kp GT    &kp AT    &kp CARET &kp QMARK &none           &none     &kp DEL   &kp K     &kp L     &kp SEMI &kp BSPC
-              &kp LT    &kp PIPE  &none     &none     &none           &none     &kp SEMI  &kp COMMA &kp DOT   &kp BSLH
-                                            &sl NUM   &sl MOV         &none     &sl DEF
+              &kp EXCL  &kp DQT   &kp HASH  &kp DLLR  &kp PRCNT       &kp AMPS  &kp QMARK  &kp LPAR  &kp RPAR  &kp EQUAL
+    &sl DEF   &kp GT    &kp AT    &kp SQT   &kp DQT   &kb PLUS        &kb TILDE &kp COLON  &kp LBKT  &kp RBKT  &kp SEMI &kp FSLH
+              &kp LT    &kp PIPE  &KB CARET &kb UNDER &kb MINUS       &none     &kp SEMI   &kp LBRC  &kp RBRC  &kp BSLH
+                                            &sl NUM   &sl DEF         &none     &sl NAV
             >;
         };
 
-        number_layer {
+        numeric_layer {
 // num
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |    1    |    2    |    3    |    4    |    5    |     |    6    |    7    |    8    |    9    |    0    |
-// |  DEF    |         |         |         |         |         |     |         |    4    |    5    |    6    |    :    |    /     |
-//           |         |         |         |         |         |     |         |    1    |    2    |    3    |    ~    |
-//                                         |   DEF   |   MOV   |     |         |   SYS   |
+// |  DEF    |         |         |         |         |         |     |         |    4    |    5    |    6    |   ;Ö    |   'Ä     |
+//           |         |         |         |         |         |     |         |    1    |    2    |    3    |   [Å    |
+//                                         |   DEF   |   SYM   |     |    0    |   NAV   |
             bindings = <
               &kp N1    &kp N2    &kp N3    &kp N4    &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
-    &sl DEF   &none     &none     &none     &none     &none           &none     &kp N4    &kp N5    &kp N6    &kp COLON  &kp FSLH
-              &none     &none     &none     &none     &none           &none     &kp N1    &kp N2    &kp N3    &kp TILDE
-                                            &sl DEF   &sl MOV         &none     &sl SYS
+    &sl DEF   &none     &none     &none     &none     &none           &none     &kp N4    &kp N5    &kp N6    &kp SEMI  &kp SQT
+              &none     &none     &none     &none     &none           &none     &kp N1    &kp N2    &kp N3    &kp LBKT
+                                            &sl DEF   &sl SYM         &kb N0    &sl NAV
             >;
         };
 
-        movement_layer {
-// mov
+        navigation_layer {
+// nav
 // -------------------------------------------------------------     --------------------------------------------------------------
-//           |   BT 1  |   BT 2  |   BT 3  |   BT 4  |   BT 5  |     |  HOME   |  PGDN   |   PGUP  |  END    |    Å    |
-// |  DEF    |   TAB   |         |         |         |         |     |  LEFT   |  DOWN   |    UP   |  RIGHT  |    Ö    |    Ä     |
+//           |   BT 1  |   BT 2  |   BT 3  |   BT 4  |   BT 5  |     |  HOME   |  PGDN   |   PGUP  |  END    |   DEL   |
+// |  DEF    |   TAB   |         |         |         |         |     |  LEFT   |  DOWN   |    UP   |  RIGHT  |   TAB   |   BSPC   |
 //           | BT CLR  |         |         |         |         |     |         |  LEFT   |   DOWN  |  RIGHT  |         |
-//                                         |   NUM   |   DEF   |     |         |   SYS   |
+//                                         |   NUM   |   SYM   |     |         |   DEF   |
             bindings = <
-   &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5   &kp HOME  &kp PG_UP &kp PG_DN &kp END   &none
-    &sl DEF   &kp TAB     &none     &none     &none     &none           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &none     &none
-             &bt BT_CLR &none     &none     &none     &none           &none     &kp LEFT  &kp DOWN  &kp RIGHT &none
-                                            &sl NUM   &sl DEF         &none     &sl SYS
+   &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5   &kp HOME  &kp PG_UP &kp PG_DN &kp END    &kb DEL
+       &sl DEF   &kp TAB    &none     &none     &none     &none         &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kb TAB   &kb BSPC
+             &bt BT_CLR &none     &none     &none     &none           &none     &kp LEFT  &kp DOWN  &kp RIGHT  &none
+                                            &sl NUM   &sl SYM         &none     &sl DEF
             >;
 
             /* sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>; */
