@@ -10,12 +10,40 @@
 #define NAV 3
 
 / {
-    keymap {
-        compatible = "zmk,keymap";
 
-        default_layer {
+macros {
+	macro_name: cut {
+	label = "cut"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
+	bindings
+		= <&macro_press &kp LCTRL>
+		, <&macro_tap &kp X>
+		, <&macro_release &kp LCTRL>
+		;
+	};
+	macro_name: copy {
+	label = "copy"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
+	bindings
+		= <&macro_press &kp LCTRL>
+		, <&macro_tap &kp C>
+		, <&macro_release &kp LCTRL>
+		;
+	};
+	macro_name: paste {
+	label = "paste"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
+	bindings
+		= <&macro_press &kp LCTRL>
+		, <&macro_tap &kp V>
+		, <&macro_release &kp LCTRL>
+		;
+	};
+};
 
-// default
+keymap {
+	compatible = "zmk,keymap";
+
+	default_layer {
+
+// def
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |    Q    |    W    |    F    |    P    |    B    |     |    J    |    L    |    U    |    Y    |    '    |
 // |SHIFT/ESC|    A    |    R    |    S    |    T    |    G    |     |    M    |    N    |    E    |    I    |    O    | RETTURN |
@@ -33,14 +61,14 @@
 
 // sym
 // -------------------------------------------------------------     --------------------------------------------------------------
-//           |    !    |    "    |    #    |    $    |    %    |     |    &    |    ?    |    (    |    )    |    =    |
-// |  DEF    |    >    |    @    |    '    |    "    |    +    |     |    ~    |    :    |    [    |    ]    |    *    |   /   |
-//           |    <    |    |    |    ^    |    _    |    -    |     |         |    ;    |    {    |    }    |    \    |
+//           |    !    |         |    [    |    '    |   #     |     |    &    |    ?    |    ]    |         |         |
+// |  DEF    |    >    |    @    |    (    |    "    |   $     |     |    ^    |    :    |    )    |    |    |    ~    |   /   |
+//           |    <    |         |    {    |    _    |         |     |         |    ;    |    }    |         |    \    |
 //                                         |   NUM   |  DEF    |     |         |   NAV   |
             bindings = <
-              &kp EXCL  &kp DQT   &kp HASH  &kp DLLR  &kp PRCNT       &kp AMPS  &kp QMARK  &kp LPAR  &kp RPAR  &kp EQUAL
-    &sl DEF   &kp GT    &kp AT    &kp SQT   &kp DQT   &kp PLUS        &kp TILDE &kp COLON  &kp LBKT  &kp RBKT  &kp STAR  &kp FSLH
-              &kp LT    &kp PIPE  &kp CARET &kp UNDER &kp MINUS       &none     &kp SEMI   &kp LBRC  &kp RBRC  &kp BSLH
+              &kp EXCL  &none     &kp LBKT  &kp SQT   &kp HASH        &kp AMPS  &kp QMARK  &kp RBKT  &none     $none
+    &sl DEF   &kp GT    &kp AT    &kp LPAR  &kp DQT   &kp DLLR        &kp CARET &kp COLON  &kp RPAR  &kp PIPE  &kp TILDE &kp FSLH
+              &kp LT    &none     &kp LBRC  &kp UNDER &none           &none     &kp SEMI   &kp RBRC  &none     &kp BSLH
                                             &sl NUM   &sl DEF         &none     &sl NAV
             >;
         };
@@ -50,12 +78,12 @@
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |    1    |    2    |    3    |    4    |    5    |     |    6    |    7    |    8    |    9    |    0    |
 // |  DEF    |         |    -    |    +    |    *    |    /    |     |         |    4    |    5    |    6    |   *Ö    |   @Ä     |
-//           |         |         |         |         |         |     |         |    1    |    2    |    3    |   [Å    |
+//           |         |         |    %    |    =    |         |     |         |    1    |    2    |    3    |   [Å    |
 //                                         |   DEF   |   SYM   |     |    0    |   NAV   |
             bindings = <
               &kp N1    &kp N2    &kp N3    &kp N4    &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
     &sl DEF   &none     &kp MINUS &kp PLUS  &kp STAR  &kp FSLH        &none     &kp N4    &kp N5    &kp N6    &kp STAR  &kp AT
-              &none     &none     &none     &none     &none           &none     &kp N1    &kp N2    &kp N3    &kp LBKT
+              &none     &none     &kp PRCNT &kp EQUAL &none           &none     &kp N1    &kp N2    &kp N3    &kp LBKT
                                             &sl DEF   &sl SYM         &kp N0    &sl NAV
             >;
         };
@@ -64,14 +92,14 @@
 // nav
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |   BT 1  |   BT 2  |   BT 3  |   BT 4  |   BT 5  |     |  HOME   |  PGDN   |   PGUP  |  END    |   DEL   |
-// |  DEF    |   TAB   |         |         |         |         |     |  LEFT   |  DOWN   |    UP   |  RIGHT  |   TAB   |   BSPC   |
-//           | BT CLR  |         |         |         |         |     |         |  LEFT   |   DOWN  |  RIGHT  |         |
-//                                         |   NUM   |   SYM   |     |         |   DEF   |
+// |  DEF    |         |   cut  |   copy   |   paste |         |     |  LEFT   |  DOWN   |    UP   |  RIGHT  |   TAB   |   BSPC   |
+//           | BT CLR  |        |          |         |         |     |         |  LEFT   |   DOWN  |  RIGHT  |         |
+//                                         |   NUM   |   SYM   |     |  RGUI   |   TAB   |
             bindings = <
    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5   &kp HOME  &kp PG_UP &kp PG_DN &kp END    &kp DEL
-     &sl DEF   &kp TAB    &none     &none     &none     &none         &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp TAB   &kp BSPC
-             &bt BT_CLR &none     &none     &none     &none           &none     &kp LEFT  &kp DOWN  &kp RIGHT  &none
-                                            &sl NUM   &sl SYM         &none     &sl DEF
+     &sl DEF   &none     &cut      &copy     &paste    &none           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp TAB   &kp BSPC
+             &bt BT_CLR  &none     &none     &none     &none           &none     &kp LEFT  &kp DOWN  &kp RIGHT  &none
+                                            &sl NUM   &sl SYM         &kp RGUI  &kp TAB
             >;
 
             /* sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>; */
