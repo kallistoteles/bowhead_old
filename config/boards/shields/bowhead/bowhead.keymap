@@ -95,13 +95,13 @@ keymap {
 // num
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |    1    |    2    |    3    |    4    |    5    |     |    6    |    7    |    8    |    9    |    0    |
-// |  DEF    |         |    -    |    +    |    *    |    /    |     |         |    4    |    5    |    6    |   *Ö    |   @Ä     |
-//           |         |         |    %    |    =    |         |     |         |    1    |    2    |    3    |   [Å    |
+// |  DEF    |    :Ö   |    -    |    +    |    *    |    /    |     |         |    4    |    5    |    6    |   ;ö    |   'ä     |
+//           |    {Å   |    "Ä   |    %    |    =    |         |     |         |    1    |    2    |    3    |   [å    |
 //                                         |   DEF   |   SYM   |     |    0    |   NAV   |
             bindings = <
               &kp N1    &kp N2    &kp N3    &kp N4    &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
-    &sl DEF   &none     &kp MINUS &kp PLUS  &kp STAR  &kp FSLH        &none     &kp N4    &kp N5    &kp N6    &kp STAR  &kp AT
-              &none     &none     &kp PRCNT &kp EQUAL &none           &none     &kp N1    &kp N2    &kp N3    &kp LBKT
+    &sl DEF   &kp COLON &kp MINUS &kp PLUS  &kp STAR  &kp FSLH        &none     &kp N4    &kp N5    &kp N6    &kp SEMI  &kp SQT
+              &kp LBRC  &kp DQT   &kp PRCNT &kp EQUAL &none           &none     &kp N1    &kp N2    &kp N3    &kp LBKT
                                             &sl DEF   &sl SYM         &kp N0    &sl NAV
             >;
         };
