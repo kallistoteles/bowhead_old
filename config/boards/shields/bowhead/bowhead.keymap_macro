@@ -11,6 +11,34 @@
 
 / {
 
+/*
+macros {
+	macro_name: cut {
+	label = "cut"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
+	bindings
+		= <&macro_press &kp LCTRL>
+		, <&macro_tap &kp X>
+		, <&macro_release &kp LCTRL>
+		;
+	};
+	macro_name: copy {
+	label = "copy"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
+	bindings
+		= <&macro_press &kp LCTRL>
+		, <&macro_tap &kp C>
+		, <&macro_release &kp LCTRL>
+		;
+	};
+	macro_name: paste {
+	label = "paste"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
+	bindings
+		= <&macro_press &kp LCTRL>
+		, <&macro_tap &kp V>
+		, <&macro_release &kp LCTRL>
+		;
+	};
+};
+*/
 
 keymap {
 	compatible = "zmk,keymap";
@@ -24,7 +52,7 @@ keymap {
 //                                         |   NUM   |   SYM   |     |RGUI/SPACE|  NAV   |
             bindings = <
               &kp Q     &kp W     &kp F     &kp P     &kp B           &kp J     &kp L     &kp U     &kp Y     &kp SQT
-&mt LSHIFT ESC &kp A    &kp R     &kp S     &kp T     &kp G           &kp M     &kp N     &kp E     &kp I     &kp O      &kp RET
+&mt LSHIFT ESC &kp A    &kp R     &kp S     &kp T     &kp G           &kp M     &kp N     &kp E     &kp I     &kp O   &kp RET
         &mt LCTRL X     &kp C     &kp D     &kp V     &kp Z           &kp K     &kp H     &kp COMMA &kp DOT   &mt LALT FSLH
                                         &sl NUM       &sl SYM         &mt RGUI SPACE  &sl NAV
             >;
@@ -74,6 +102,7 @@ keymap {
                                             &sl NUM   &sl SYM         &kp RGUI  &kp TAB
             >;
 
+     // &sl DEF   &none     &cut      &copy     &paste    &none           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp TAB   &kp BSPC
             /* sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>; */
         };
     };
