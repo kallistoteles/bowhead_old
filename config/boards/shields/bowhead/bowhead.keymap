@@ -13,7 +13,7 @@
 
 /*
 macros {
-	macro_name: cut {
+	cut: cut {
 	label = "cut"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
 	bindings
 		= <&macro_press &kp LCTRL>
@@ -21,7 +21,7 @@ macros {
 		, <&macro_release &kp LCTRL>
 		;
 	};
-	macro_name: copy {
+	copy: copy {
 	label = "copy"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
 	bindings
 		= <&macro_press &kp LCTRL>
@@ -29,7 +29,7 @@ macros {
 		, <&macro_release &kp LCTRL>
 		;
 	};
-	macro_name: tcopy {
+	tcopy: tcopy {
 	label = "tcopy"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
 	bindings
 		= <&macro_press &kp LCTRL>
@@ -39,7 +39,7 @@ macros {
 		, <&macro_release &kp LSHIFT>
 		;
 	};
-	macro_name: paste {
+	paste: paste {
 	label = "paste"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
 	bindings
 		= <&macro_press &kp LCTRL>
@@ -47,7 +47,7 @@ macros {
 		, <&macro_release &kp LCTRL>
 		;
 	};
-	macro_name: tpaste {
+	tpaste: tpaste {
 	label = "tpaste"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
 	bindings
 		= <&macro_press &kp LCTRL>
