@@ -51,7 +51,7 @@ macros {
 	bindings
 		= <&macro_press &kp LCTRL>
 		, <&macro_press &kp LSHIFT>
-		, <&macro_tap &kp C>
+		, <&macro_tap &kp V>
 		, <&macro_release &kp LCTRL>
 		, <&macro_release &kp LSHIFT>
 		;
