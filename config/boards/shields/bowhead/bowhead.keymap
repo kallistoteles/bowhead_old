@@ -56,6 +56,72 @@ macros {
 		, <&macro_release &kp LSHIFT>
 		;
 	};
+	gui1: gui1 {
+	label = "gui1"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
+	bindings
+		= <&macro_press &kp RGUI>
+		, <&macro_tap &kp N1>
+		, <&macro_release &kp RGUI>
+		;
+	};
+	gui2: gui2 {
+	label = "gui2"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
+	bindings
+		= <&macro_press &kp RGUI>
+		, <&macro_tap &kp N2>
+		, <&macro_release &kp RGUI>
+		;
+	};
+	gui3: gui3 {
+	label = "gui3"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
+	bindings
+		= <&macro_press &kp RGUI>
+		, <&macro_tap &kp N3>
+		, <&macro_release &kp RGUI>
+		;
+	};
+	gui4: gui4 {
+	label = "gui4"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
+	bindings
+		= <&macro_press &kp RGUI>
+		, <&macro_tap &kp N4>
+		, <&macro_release &kp RGUI>
+		;
+	};
+	gui5: gui5 {
+	label = "gui5"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
+	bindings
+		= <&macro_press &kp RGUI>
+		, <&macro_tap &kp N5>
+		, <&macro_release &kp RGUI>
+		;
+	};
+	guik: guik {
+	label = "guik"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
+	bindings
+		= <&macro_press &kp RGUI>
+		, <&macro_tap &kp K>
+		, <&macro_release &kp RGUI>
+		;
+	};
+	guij: guij {
+	label = "guij"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
+	bindings
+		= <&macro_press &kp RGUI>
+		, <&macro_tap &kp J>
+		, <&macro_release &kp RGUI>
+		;
+	};
+	guit: guit {
+	label = "guit"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
+	bindings
+		= <&macro_press &kp RGUI>
+		, <&macro_press &kp LSHIFT>
+		, <&macro_tap &kp RET>
+		, <&macro_release &kp LSHIFT>
+		, <&macro_release &kp RGUI>
+		;
+	};
 };
 
 keymap {
@@ -67,12 +133,12 @@ keymap {
 //           |    Q    |    W    |    F    |    P    |    B    |     |    J    |    L    |    U    |    Y    |    '    |
 // |SHIFT/ESC|    A    |    R    |    S    |    T    |    G    |     |    M    |    N    |    E    |    I    |    O    | RETTURN |
 //           | CTRL/X  |    C    |    D    |    V    |    Z    |     |    K    |    H    |    ,    |    .    |  ALT//  |
-//                                         |   NUM   |   SYM   |     |RGUI/SPACE|  NAV   |
+//                                         |   NUM   |   SYM   |     |SHIFT/SPACE|  NAV   |
             bindings = <
               &kp Q     &kp W     &kp F     &kp P     &kp B           &kp J     &kp L     &kp U     &kp Y     &kp SQT
 &mt LSHIFT ESC &kp A    &kp R     &kp S     &kp T     &kp G           &kp M     &kp N     &kp E     &kp I     &kp O   &kp RET
         &mt LCTRL X     &kp C     &kp D     &kp V     &kp Z           &kp K     &kp H     &kp COMMA &kp DOT   &mt LALT FSLH
-                                        &sl NUM       &sl SYM         &mt RGUI SPACE  &sl NAV
+                                        &sl NUM       &sl SYM         &mt LSHIFT SPACE  &sl NAV
             >;
         };
 
@@ -80,12 +146,12 @@ keymap {
 // sym
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |    !    |         |    [    |    '    |   #     |     |    &    |    ?    |    ]    |         |         |
-// |  DEF    |    >    |    @    |    (    |    "    |   $     |     |    ^    |    :    |    )    |    |    |    ~    |   /   |
+// |  SHIFT  |    >    |    @    |    (    |    "    |   $     |     |    ^    |    :    |    )    |    |    |    ~    |   /   |
 //           |    <    |         |    {    |    _    |         |     |         |    ;    |    }    |         |    \    |
 //                                         |   NUM   |  DEF    |     |         |   NAV   |
             bindings = <
               &kp EXCL  &none     &kp LBKT  &kp SQT   &kp HASH        &kp AMPS  &kp QMARK  &kp RBKT  &none     &none
-    &sl DEF   &kp GT    &kp AT    &kp LPAR  &kp DQT   &kp DLLR        &kp CARET &kp COLON  &kp RPAR  &kp PIPE  &kp TILDE &kp FSLH
+   &kp LSHIFT &kp GT    &kp AT    &kp LPAR  &kp DQT   &kp DLLR        &kp CARET &kp COLON  &kp RPAR  &kp PIPE  &kp TILDE &kp FSLH
               &kp LT    &none     &kp LBRC  &kp UNDER &none           &none     &kp SEMI   &kp RBRC  &none     &kp BSLH
                                             &sl NUM   &sl DEF         &none     &sl NAV
             >;
@@ -95,14 +161,14 @@ keymap {
 // num
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |    1    |    2    |    3    |    4    |    5    |     |    6    |    7    |    8    |    9    |    0    |
-// |  DEF    |    :Ö   |    -    |    +    |    *    |    /    |     |         |    4    |    5    |    6    |   ;ö    |   'ä     |
+// |  SHIFT  |    :Ö   |    -    |    +    |    *    |    /    |     |         |    4    |    5    |    6    |   ;ö    |   'ä     |
 //           |    {Å   |    "Ä   |    %    |    =    |         |     |         |    1    |    2    |    3    |   [å    |
 //                                         |   DEF   |   SYM   |     |    0    |   NAV   |
             bindings = <
               &kp N1    &kp N2    &kp N3    &kp N4    &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
-    &sl DEF   &kp COLON &kp MINUS &kp PLUS  &kp STAR  &kp FSLH        &none     &kp N4    &kp N5    &kp N6    &kp SEMI  &kp SQT
+   &kp LSHIFT &kp COLON &kp MINUS &kp PLUS  &kp STAR  &kp FSLH        &none     &kp N4    &kp N5    &kp N6    &kp SEMI  &kp SQT
               &kp LBRC  &kp DQT   &kp PRCNT &kp EQUAL &none           &none     &kp N1    &kp N2    &kp N3    &kp LBKT
-                                            &sl DEF   &sl SYM         &kp N0    &sl NAV
+                                            &sl NAV   &sl SYM         &kp N0    &sl NAV
             >;
         };
 
@@ -110,14 +176,14 @@ keymap {
 // nav
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |   BT 1  |   BT 2  |   BT 3  |   BT 4  |   BT 5  |     |  HOME   |  PGDN   |   PGUP  |  END    |   DEL   |
-// |  DEF    |         |   cut  |   copy   |   paste |         |     |  LEFT   |  DOWN   |    UP   |  RIGHT  |   TAB   |   BSPC   |
-//           | BT CLR  |        |   tcopy  |  tpaste |         |     |         |  LEFT   |   DOWN  |  RIGHT  |         |
-//                                         |   NUM   |   SYM   |     |  RGUI   |   TAB   |
+// |  SHIFT  |   gui1  |   gui2  |   gui3  |   gui4  |   gui5  |     |  LEFT   |  DOWN   |    UP   |  RIGHT  |   TAB   |   BSPC   |
+//           | BT CLR  |   guik  |   guij  |   guit  |         |     |  cut    |  copy   |   paste |  tcopy  | tpaste  |
+//                                         |   NUM   |   SYM   |     |  RGUI   |  NUM    |
             bindings = <
-   &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5   &kp HOME  &kp PG_UP &kp PG_DN &kp END    &kp DEL
-     &sl DEF   &none     &cut      &copy     &paste    &none           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp TAB   &kp BSPC
-             &bt BT_CLR  &none     &tcopy    &tpaste   &none           &none     &kp LEFT  &kp DOWN  &kp RIGHT  &none
-                                            &sl NUM   &sl SYM         &kp RGUI  &kp TAB
+   &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5    &kp HOME  &kp PG_DN &kp PG_UP &kp END    &kp DEL
+     &kp LSHIFT  &gui1   &gui2     &gui3     &gui4     &gui5           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp TAB   &kp BSPC
+             &bt BT_CLR  &guik     &guij     &guit     &none           &cut      &copy     &paste    &tcopy     &tpaste
+                                             &sl NUM   &sl SYM         &kp RGUI  &sl NUM
             >;
 
             /* sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>; */
