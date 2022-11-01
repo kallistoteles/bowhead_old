@@ -161,13 +161,13 @@ keymap {
 // num
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |    1    |    2    |    3    |    4    |    5    |     |    6    |    7    |    8    |    9    |    0    |
-// |  SHIFT  |    :Ö   |    -    |    +    |    *    |    /    |     |         |    4    |    5    |    6    |   ;ö    |   'ä     |
-//           |    {Å   |    "Ä   |    %    |    =    |         |     |         |    1    |    2    |    3    |   [å    |
+// |  SHIFT  |    :Ö   |    -    |    +    |    *    |    /    |     |         |    4    |    5    |    6    |    å    |   ä     |
+//           |    {Å   |    "Ä   |    %    |    =    |         |     |         |    1    |    2    |    3    |    ö    |
 //                                         |   DEF   |   SYM   |     |    0    |   NAV   |
             bindings = <
               &kp N1    &kp N2    &kp N3    &kp N4    &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
-   &kp LSHIFT &kp COLON &kp MINUS &kp PLUS  &kp STAR  &kp FSLH        &none     &kp N4    &kp N5    &kp N6    &kp SEMI  &kp SQT
-              &kp LBRC  &kp DQT   &kp PRCNT &kp EQUAL &none           &none     &kp N1    &kp N2    &kp N3    &kp LBKT
+   &kp LSHIFT &kp COLON &kp MINUS &kp PLUS  &kp STAR  &kp FSLH        &none     &kp N4    &kp N5    &kp N6    &kp INT1  &kp INT2
+              &kp LBRC  &kp DQT   &kp PRCNT &kp EQUAL &none           &none     &kp N1    &kp N2    &kp N3    &kp INT3
                                             &sl NAV   &sl SYM         &kp N0    &sl NAV
             >;
         };
