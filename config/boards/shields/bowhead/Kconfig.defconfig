@@ -1,6 +1,12 @@
 # Copyright (c) 2020 Pete Johanson, Kurtis Lew
 # SPDX-License-Identifier: MIT
 
+config ZMK_BLE
+	default y
+
+config ZMK_USB
+	default y
+
 if SHIELD_BOWHEAD_LEFT
 
 config ZMK_KEYBOARD_NAME

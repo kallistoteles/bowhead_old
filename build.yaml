@@ -17,3 +17,5 @@ include:
     shield: bowhead_left
   - board: nice_nano_v2
     shield: bowhead_right
+  - board: nice_nano_v2
+    shield: settings_reset

@@ -1,0 +1,80 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+/* #include <dt-bindings/zmk/mouse.h> */
+
+/* Layers */
+#define DEF 0
+#define SYS 1
+#define NUM 2
+#define MOV 3
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+
+// default
+// -------------------------------------------------------------     --------------------------------------------------------------
+//           |    Q    |    W    |    E    |    R    |    T    |     |    Y    |    U    |    I    |    O    |    P    |
+// |SHIFT/ESC|    A    |    S    |    D    |    F    |    G    |     |    H    |    J    |    K    |    L    |    '    |RGUI/RETTURN |
+//           | CTRL/Z  |    X    |    C    |    V    |    B    |     |    N    |    M    |    ,    |    .    |    -    |
+//                                         |   NUM   |   MOV   |     |ALT/SPACE|   SYS   |
+            bindings = <
+              &kp Q     &kp W     &kp E     &kp R     &kp T           &kp Y     &kp U     &kp I     &kp O     &kp P
+&mt LSHIFT ESC &kp A    &kp S     &kp D     &kp F     &kp G           &kp H     &kp J     &kp K     &kp L     &kp SQT   &mt RGUI RET
+        &mt LCTRL Z     &kp X     &kp C     &kp V     &kp B           &kp N     &kp M     &kp COMMA &kp DOT   &kp MINUS
+                                        &sl NUM       &sl MOV         &mt LALT SPACE  &sl SYS
+            >;
+        };
+
+        system_layer {
+
+// sys
+// -------------------------------------------------------------     --------------------------------------------------------------
+//           |    !    |    "    |    #    |    $    |    %    |     |    &    |    /    |    (    |    )    |    =    |
+// |  DEF    |    >    |    @    |    ^    |    ?    |         |     |         |   DEL   |    [    |    ]    |    *    |   BSPC   |
+//           |    <    |    |    |         |         |         |     |         |    ;    |    {    |    }    |    \    |
+//                                         |   NUM   |  MOV    |     |         |   DEF   |
+            bindings = <
+              &kp EXCL  &kp DQT   &kp HASH  &kp DLLR  &kp PRCNT       &kp AMPS  &kp FSLH  &kp LPAR  &kp RPAR  &kp EQUAL
+    &sl DEF   &kp GT    &kp AT    &kp CARET &kp QMARK &none           &none     &kp DEL   &kp K     &kp L     &kp SEMI &kp BSPC
+              &kp LT    &kp PIPE  &none     &none     &none           &none     &kp SEMI  &kp COMMA &kp DOT   &kp BSLH
+                                            &sl NUM   &sl MOV         &none     &sl DEF
+            >;
+        };
+
+        number_layer {
+// num
+// -------------------------------------------------------------     --------------------------------------------------------------
+//           |    1    |    2    |    3    |    4    |    5    |     |    6    |    7    |    8    |    9    |    0    |
+// |  DEF    |         |         |         |         |         |     |         |    4    |    5    |    6    |    :    |    /     |
+//           |         |         |         |         |         |     |         |    1    |    2    |    3    |    ~    |
+//                                         |   DEF   |   MOV   |     |         |   SYS   |
+            bindings = <
+              &kp N1    &kp N2    &kp N3    &kp N4    &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
+    &sl DEF   &none     &none     &none     &none     &none           &none     &kp N4    &kp N5    &kp N6    &kp COLON  &kp FSLH
+              &none     &none     &none     &none     &none           &none     &kp N1    &kp N2    &kp N3    &kp TILDE
+                                            &sl DEF   &sl MOV         &none     &sl SYS
+            >;
+        };
+
+        movement_layer {
+// mov
+// -------------------------------------------------------------     --------------------------------------------------------------
+//           |   BT 1  |   BT 2  |   BT 3  |   BT 4  |   BT 5  |     |  HOME   |  PGDN   |   PGUP  |  END    |    Å    |
+// |  DEF    |   TAB   |         |         |         |         |     |  LEFT   |  DOWN   |    UP   |  RIGHT  |    Ö    |    Ä     |
+//           | BT CLR  |         |         |         |         |     |         |  LEFT   |   DOWN  |  RIGHT  |         |
+//                                         |   NUM   |   DEF   |     |         |   SYS   |
+            bindings = <
+   &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5   &kp HOME  &kp PG_UP &kp PG_DN &kp END   &none
+    &sl DEF   &kp TAB     &none     &none     &none     &none           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &none     &none
+             &bt BT_CLR &none     &none     &none     &none           &none     &kp LEFT  &kp DOWN  &kp RIGHT &none
+                                            &sl NUM   &sl DEF         &none     &sl SYS
+            >;
+
+            /* sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>; */
+        };
+    };
+};
