@@ -132,13 +132,13 @@ keymap {
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |    Q    |    W    |    F    |    P    |    B    |     |    J    |    L    |    U    |    Y    |    '    |
 // |SHIFT/ESC|    A    |    R    |    S    |    T    |    G    |     |    M    |    N    |    E    |    I    |    O    | SHIFT/RETTURN |
-//           | CTRL/X  |    C    |    D    |    V    |    Z    |     |    K    |    H    |    ,    |    .    |  ALT//  |
-//                                         |   NUM   |   SYM   |     |SHIFT/SPACE|  NAV   |
+//           | CTRL/X  |  ALT/C  |    D    |    V    |    Z    |     |    K    |    H    |    ,    |  ALT/.  | CTRL//  |
+//                                         |   NUM   |   SYM   |     |GUI/SPACE|  NAV  |
             bindings = <
               &kp Q     &kp W     &kp F     &kp P     &kp B           &kp J     &kp L     &kp U     &kp Y     &kp SQT
 &mt LSHIFT ESC &kp A    &kp R     &kp S     &kp T     &kp G           &kp M     &kp N     &kp E     &kp I     &kp O      &mt RSHIFT RET
-        &mt LCTRL X     &kp C     &kp D     &kp V     &kp Z           &kp K     &kp H     &kp COMMA &kp DOT   &mt LALT FSLH
-                                        &sl NUM       &sl SYM         &mt LSHIFT SPACE  &sl NAV
+        &mt LCTRL X  &mt LALT C   &kp D     &kp V     &kp Z           &kp K     &kp H   &kp COMMA &mt RALT DOT &mt RCTRL FSLH
+                                        &sl NUM       &sl SYM         &mt LGUI SPACE  &sl NAV
             >;
         };
 
