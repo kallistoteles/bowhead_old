@@ -183,7 +183,7 @@ keymap {
 //                                         |   NUM   |   SYM   |     |  RGUI   |  NUM    |
             bindings = <
    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5    &kp HOME  &kp PG_DN &kp PG_UP &kp END    &kp DEL
-     &kp LSHIFT  &gui1   &F2     &F10     &gui4     &gui5           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp TAB   &kp BSPC
+     &kp LSHIFT  &gui1   &kp F2     &kp F10     &gui4     &gui5           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp TAB   &kp BSPC
              &bt BT_CLR  &guik     &guij     &guit     &none           &cut      &copy     &paste    &tcopy     &tpaste
                                              &sl NUM   &sl SYM         &kp RGUI  &sl NUM
             >;
