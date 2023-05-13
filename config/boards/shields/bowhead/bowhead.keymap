@@ -1,8 +1,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include "../zmk-nodefree-config/helper.h"
-#include "../zmk-nodefree-config/international_chars/swedish.dtsi"
+// # include "../zmk-nodefree-config/helper.h"
+// # include "../zmk-nodefree-config/international_chars/swedish.dtsi"
 /* #include <dt-bindings/zmk/mouse.h> */
 
 /* Layers */
@@ -90,7 +90,7 @@ keymap {
     bindings = <
               &kp Q     &kp W     &kp F     &kp P     &kp B           &kp J     &kp L     &kp U     &kp Y     &kp GRAVE
 &mt LSHIFT ESC &kp A    &kp R     &kp S     &kp T     &kp G           &kp M     &kp N     &kp E     &kp I     &kp O     &mt RSHIFT RET
-        &mt LCTRL X  &mt LALT C   &kp D     &kp V     &kp Z           &kp K     &kp H     &sv_ae    &sv_ao    &sv_oe
+        &mt LCTRL X  &mt LALT C   &kp D     &kp V     &kp Z           &kp K     &kp H     &kp INT1  &mt RALT INT2 &mt RCTRL INT3
                                         &sl NUM       &sl SYM         &kp SPACE &sl NAV
     >;
   };
