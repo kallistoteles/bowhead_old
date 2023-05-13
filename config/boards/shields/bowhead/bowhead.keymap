@@ -57,64 +57,7 @@ macros {
 		;
 	};
 
-	gui1: gui1 {
-	label = "gui1"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
-	bindings
-		= <&macro_press &kp LCTRL>
-		, <&macro_press &kp LALT>
-		, <&macro_tap &kp DEL>
-		, <&macro_release &kp LALT>
-		, <&macro_release &kp LCTRL>
-		;
-	};
-	gui2: gui2 {
-	label = "gui2"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
-	bindings
-		= <&macro_press &kp RGUI>
-		, <&macro_tap &kp N2>
-		, <&macro_release &kp RGUI>
-		;
-	};
-	gui3: gui3 {
-	label = "gui3"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
-	bindings
-		= <&macro_press &kp RGUI>
-		, <&macro_tap &kp N3>
-		, <&macro_release &kp RGUI>
-		;
-	};
-	gui4: gui4 {
-	label = "gui4"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
-	bindings
-		= <&macro_press &kp RGUI>
-		, <&macro_tap &kp N4>
-		, <&macro_release &kp RGUI>
-		;
-	};
-	gui5: gui5 {
-	label = "gui5"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
-	bindings
-		= <&macro_press &kp RGUI>
-		, <&macro_tap &kp N5>
-		, <&macro_release &kp RGUI>
-		;
-	};
-	guik: guik {
-	label = "guik"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
-	bindings
-		= <&macro_press &kp RGUI>
-		, <&macro_tap &kp K>
-		, <&macro_release &kp RGUI>
-		;
-	};
-	guij: guij {
-	label = "guij"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
-	bindings
-		= <&macro_press &kp RGUI>
-		, <&macro_tap &kp J>
-		, <&macro_release &kp RGUI>
-		;
-	};
+
 	guit: guit {
 	label = "guit"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
 	bindings
@@ -154,7 +97,7 @@ keymap {
 //                                         |   NUM   |  DEF    |     |         |   NAV   |
             bindings = <
               &kp EXCL  &none     &kp LBKT  &kp SQT   &kp HASH        &kp AMPS  &kp QMARK  &kp RBKT  &none     &none
-   &mt LSHIFT &to DEF &kp GT    &kp AT    &kp LPAR  &kp DQT   &kp DLLR        &kp CARET &kp COLON  &kp RPAR  &kp PIPE  &kp TILDE &kp FSLH
+   &mt LSHIFT DEF &kp GT    &kp AT    &kp LPAR  &kp DQT   &kp DLLR        &kp CARET &kp COLON  &kp RPAR  &kp PIPE  &kp TILDE &kp FSLH
               &kp LT    &none     &kp LBRC  &kp UNDER &none           &none     &kp SEMI   &kp RBRC  &none     &kp BSLH
                                             &sl NUM   &sl DEF         &none     &sl NAV
             >;
