@@ -14,6 +14,7 @@
 / {
 
 macros {
+
 	cut: cut {
 	label = "cut"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
 	bindings
@@ -22,6 +23,7 @@ macros {
 		, <&macro_release &kp LCTRL>
 		;
 	};
+
 	copy: copy {
 	label = "copy"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
 	bindings
@@ -30,6 +32,7 @@ macros {
 		, <&macro_release &kp LCTRL>
 		;
 	};
+
 	tcopy: tcopy {
 	label = "tcopy"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
 	bindings
@@ -40,6 +43,7 @@ macros {
 		, <&macro_release &kp LSHIFT>
 		;
 	};
+
 	paste: paste {
 	label = "paste"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
 	bindings
@@ -48,6 +52,7 @@ macros {
 		, <&macro_release &kp LCTRL>
 		;
 	};
+
 	tpaste: tpaste {
 	label = "tpaste"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
 	bindings
@@ -59,7 +64,6 @@ macros {
 		;
 	};
 
-
 	guit: guit {
 	label = "guit"; compatible = "zmk,behavior-macro"; #binding-cells = <0>;
 	bindings
@@ -70,6 +74,7 @@ macros {
 		, <&macro_release &kp RGUI>
 		;
 	};
+
 };
 
 keymap {
@@ -80,15 +85,15 @@ keymap {
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |    Q    |    W    |    F    |    P    |    B    |     |    J    |    L    |    U    |    Y    |    `    |
 // |SHIFT/ESC|    A    |    R    |    S    |    T    |    G    |     |    M    |    N    |    E    |    I    |    O    | SHIFT/RETTURN |
-//           | CTRL/X  |  ALT/C  |    D    |    V    |    Z    |     |    K    |    H    |    Å    |  ALT/Ä  | CTRL/Ö  |
+//           | CTRL/X  |  ALT/C  |    D    |    V    |    Z    |     |    K    |    H    |    AO   |  ALT/AE | CTRL/OE |
 //                                         |   NUM   |   SYM   |     |  SPACE  |   NAV   |
-            bindings = <
+    bindings = <
               &kp Q     &kp W     &kp F     &kp P     &kp B           &kp J     &kp L     &kp U     &kp Y     &kp GRAVE
 &mt LSHIFT ESC &kp A    &kp R     &kp S     &kp T     &kp G           &kp M     &kp N     &kp E     &kp I     &kp O     &mt RSHIFT RET
         &mt LCTRL X  &mt LALT C   &kp D     &kp V     &kp Z           &kp K     &kp H     &kp sv_ao &mt RALT sv_ae &mt RCTRL sv_oe
                                         &sl NUM       &sl SYM         &kp SPACE &sl NAV
-            >;
-        };
+    >;
+  };
 
         symbol_layer {
 // sym
