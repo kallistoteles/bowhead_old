@@ -70,7 +70,7 @@ keymap {
 // def
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |    Q    |    W    |    F    |    P    |    B    |     |    J    |    L    |    U    |    Y    |    `    |
-// |SHIFT/ESC|    A    |    R    |    S    |    T    |    G    |     |    M    |    N    |    E    |    I    |    O    | SHIFT/RETTURN |
+// |SHIFT/ESC|    A    |    R    |    S    |    T    |    G    |     |    M    |    N    |    E    |    I    |    O    | SHIFT/RETURN |
 //           |    X    |    C    |    D    |    V    |    Z    |     |    K    |    H    |    AO   |    AE   |    OE   |
 //                                         |   NUM   |   SYM   |     |  SPACE  |   NAV   |
     bindings = <
@@ -85,7 +85,7 @@ keymap {
 // sym
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |    ^    |    $    |    #    |    !    |         |     |         |    ?    |    [    |    ]    |    \    |
-// |  SHIFT  |    &    |    @    |    :    |    _    |         |     |         |    '    |    (    |    )    |    |    |   /   |
+// |  SHIFT  |    &    |    @    |    :    |    _    |         |     |         |    '    |    (    |    )    |    |    |    /   |
 //           |    <    |    >    |    ;    |         |         |     |         |    "    |    {    |    }    |    ~    |
 //                                         |   NUM   |  DEF    |     |         |   NAV   |
             bindings = <
@@ -100,14 +100,14 @@ keymap {
 // num
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |         |         |    /    |    *    |         |     |         |    7    |    8    |    9    |    0    |
-// |  SHIFT  |         |         |    +    |    -    |         |     |         |    4    |    5    |    6    |    å    |   ä     |
-//           |  CTRL   |   ALT   |    %    |    =    |         |     |         |    1    |    2    |    3    |    ö    |
-//                                         |   DEF   |   SYM   |     |   GUI   |    0    |
+// |  SHIFT  |         |         |    +    |    -    |   GUI   |     |         |    4    |    5    |    6    |         |  RETURN   |
+//           |  CTRL   |   ALT   |    %    |    =    |         |     |         |    1    |    2    |    3    |         |
+//                                         |   DEF   |   SYM   |     |  SPACE  |    0    |
             bindings = <
               &kp N1    &none     &kp FSLH  &kp STAR  &none           &none     &kp N7    &kp N8    &kp N9    &kp N0
-   &mt LSHIFT DEF &none &none     &kp PLUS  &kp MINUS &none           &none     &kp N4    &kp N5    &kp N6    &kp INT1  &kp INT2
-              &kp LCTRL &kp LALT  &kp PRCNT &kp EQUAL &none           &none     &kp N1    &kp N2    &kp N3    &kp INT3
-                                            &sl NAV   &sl SYM         &kp RGUI  &kp N0
+   &mt LSHIFT DEF &none &none     &kp PLUS  &kp MINUS &kp RGUI        &none     &kp N4    &kp N5    &kp N6    &none     &kp RET
+              &kp LCTRL &kp LALT  &kp PRCNT &kp EQUAL &none           &none     &kp N1    &kp N2    &kp N3    &none
+                                            &sl NAV   &sl SYM         &kp SPACE &kp N0
             >;
         };
 
@@ -116,14 +116,14 @@ keymap {
 // nav
 // -------------------------------------------------------------     --------------------------------------------------------------
 //           |   BT 1  |   BT 2  |   BT 3  |   BT 4  |   BT 5  |     |  HOME   |  PGDN   |   PGUP  |  END    |   DEL   |
-// |  SHIFT  |         |   cut   |  copy   |  paste  |         |     |  LEFT   |  DOWN   |    UP   |  RIGHT  |   TAB   |   BSPC   |
+// |  SHIFT  |         |   cut   |  copy   |  paste  |   GUI   |     |  LEFT   |  DOWN   |    UP   |  RIGHT  |   TAB   |   BSPC   |
 //           | BT CLR  |         |  tcopy  | tpaste  |         |     |         |         |    .    |    ,    |    /    |
-//                                         |  NUM    |   SYM   |     |  GUI    |  DEF    |
+//                                         |  NUM    |   SYM   |     |         |  DEF    |
             bindings = <
      &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5 &kp HOME  &kp PG_DN &kp PG_UP &kp END    &kp DEL
-   &mt LSHIFT DEF &none &cut      &copy     &paste    &none           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp TAB   &kp BSPC
-              &bt BT_CLR &none    &tcopy    &tpaste   &none           &none      &none    &kp DOT   &kp COMMA  &kp FSLH
-                                            &sl NUM   &sl SYM         &kp RGUI  &sl DEF
+   &mt LSHIFT DEF &none &cut      &copy     &paste    &kp RGUI        &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp TAB   &kp BSPC
+              &bt BT_CLR &none    &tcopy    &tpaste   &none           &none     &none     &kp DOT   &kp COMMA  &kp FSLH
+                                            &sl NUM   &sl SYM         &none     &sl DEF
             >;
 
             /* sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>; */
